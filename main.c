@@ -35,9 +35,7 @@ int main(int argc, char **argv)
 		}
 		monty_arg(tmp, &stack, k, file);
 	}
-
 	fclose(file);
-
 	while (stack != NULL)
 	{
 		stack_t *temp = stack;
@@ -45,13 +43,12 @@ int main(int argc, char **argv)
 		stack = stack->next;
 		free(temp);
 	}
-
 	return (EXIT_SUCCESS);
 }
 /**
  * monty_arg - function that calls each function with their argument
  * @tmp: temprary store each line of the code
- * @stack: pointer to the head of the stack
+ * @arg_stack: pointer to the head of the stack
  * @line: the index of the current line
  * @file: the file opened
  * Return: void
@@ -61,13 +58,10 @@ void monty_arg(char **tmp, stack_t **arg_stack, int line, FILE *file)
 	int j = 0;
 	char *opcodee = NULL;
 	instruction_t instructions[] = INSTRUCTIONS;
-
-
 	void (*func)(stack_t **stack, unsigned int line_number) = NULL;
 
 	while (instructions[j].opcode != NULL)
 	{
-
 		if (strcmp(instructions[j].opcode, tmp[0]) == 0)
 		{
 			if (tmp[1] != NULL)
@@ -78,8 +72,6 @@ void monty_arg(char **tmp, stack_t **arg_stack, int line, FILE *file)
 			break;
 		}
 		j++;
-
-
 	}
 	if (func)
 	{
@@ -89,7 +81,6 @@ void monty_arg(char **tmp, stack_t **arg_stack, int line, FILE *file)
 	}
 	else
 	{
-
 		opcodee = strdup(tmp[0]);
 		fclose(file);
 		print_error(2, NULL, opcodee, line + 1);
