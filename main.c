@@ -18,22 +18,20 @@ int main(int argc, char **argv)
 	file = fopen(argv[1], "r");
 	if (file == NULL)
 		print_error(1, argv[1], NULL, 0);
-	while (fgets(line, sizeof(line), file) != NULL)
+	for (; fgets(line, sizeof(line), file); k++)
 	{
-		line[strcspn(line, "\n")] = '\0';
-		token = strtok(line, " \t\n");
-		if (token == NULL)
+		token = strtok(line, " \n");
+		if (!token || token[0] == '#')
 			continue;
 		while (token != NULL)
 		{
 			if (i < 2)
 				tmp[i] = token;
-			token = strtok(NULL, " \t\n");
+			token = strtok(NULL, " \n");
 			i++;
 		}
 		tmp[2] = NULL;
 		monty_arg(tmp, &stack, k, file);
-		k++;
 	}
 
 	fclose(file);
@@ -82,7 +80,7 @@ void monty_arg(char **tmp, stack_t **stack, int line, FILE *file)
 
 	}
 	if (func)
-		func(stack, line);
+		func(stack, line + 1);
 	else
 	{
 
