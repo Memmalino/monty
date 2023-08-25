@@ -29,6 +29,8 @@ void	mul(stack_t **stack, unsigned int line_number)
 {
 	stack_t	*frst = NULL;
 
+	if (args[0] != NULL)
+		free(args[0]);
 	if (!*stack || !(*stack)->next)
 	{
 		fprintf(stderr, "L%u: can't mul, stack too short\n", line_number);
@@ -50,6 +52,8 @@ void	divide(stack_t **stack, unsigned int line_number)
 {
 	stack_t	*frst = NULL;
 
+	if (args[0] != NULL)
+		free(args[0]);
 	if (!*stack || !(*stack)->next)
 	{
 		fprintf(stderr, "L%u: can't div, stack too short\n", line_number);
@@ -76,6 +80,8 @@ void	modul(stack_t **stack, unsigned int line_number)
 {
 	stack_t	*frst = NULL;
 
+	if (args[0] != NULL)
+		free(args[0]);
 	if (!*stack || !(*stack)->next)
 	{
 		fprintf(stderr, "L%u: can't mod, stack too short\n", line_number);
