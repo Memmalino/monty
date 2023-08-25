@@ -82,7 +82,7 @@ void monty_arg(char **tmp, stack_t **stack, int line, FILE *file)
 
 	}
 	if (func)
-		func(stack, line + 1);
+		func(stack, line);
 	else
 	{
 
