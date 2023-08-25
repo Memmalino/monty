@@ -2,12 +2,19 @@
 void print_stack(stack_t *stack);
 void monty_arg(char **tmp, stack_t **stack, int line, FILE *file);
 void free_func(char **arg);
+/**
+ * main - the entry point
+ * @argc: the number of arguments to main
+ * @argv: pointers to the arguments of main
+ * Return: 0 on succes
+ */
 int main(int argc, char **argv)
 {
 	FILE *file = NULL;
 	stack_t *stack = NULL;
 	char line[1024], *token = NULL, *tmp[3];
 	int i = 0, k = 0;
+
 	if (argc != 2)
 		print_error(0, NULL, NULL, 0);
 	file = fopen(argv[1], "r");
@@ -21,7 +28,7 @@ int main(int argc, char **argv)
 			continue;
 		while (token != NULL)
 		{
-			if (i < 2)			
+			if (i < 2)
 				tmp[i] = token;
 			token = strtok(NULL, " \t\n");
 			i++;
@@ -36,24 +43,26 @@ int main(int argc, char **argv)
 	while (stack != NULL)
 	{
 		stack_t *temp = stack;
+
 		stack = stack->next;
 		free(temp);
 	}
 
-	return EXIT_SUCCESS;
+	return (EXIT_SUCCESS);
 }
 void monty_arg(char **tmp, stack_t **stack, int line, FILE *file)
 {
 	int j = 0;
 	char *opcodee = NULL;
-	void (*func)(stack_t **stack, unsigned int line_number) = NULL;
 	instruction_t instructions[] = INSTRUCTIONS;
 
+
+	void (*func)(stack_t **stack, unsigned int line_number) = NULL;
 
 	while (instructions[j].opcode != NULL)
 	{
 
-		if (strcmp(instructions[j].opcode,tmp[0]) == 0)
+		if (strcmp(instructions[j].opcode, tmp[0]) == 0)
 		{
 			if (tmp[1] != NULL)
 				args[0] = strdup(tmp[1]);

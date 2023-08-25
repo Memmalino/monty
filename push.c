@@ -1,11 +1,18 @@
 #include "monty.h"
 char *args[2];
+/**
+ * push - function that push data to the stack
+ * @stack: pointer to the head of the stack
+ * @line_number: the index of the current line being executed
+ * Return: void
+ */
 void push(stack_t **stack, unsigned int line_number)
 {
 	int value;
 	stack_t *new_node = malloc(sizeof(stack_t));
 
-	if (new_node == NULL) {
+	if (new_node == NULL)
+	{
 		fprintf(stderr, "Memory allocation failed\n");
 		exit(EXIT_FAILURE);
 	}

@@ -1,11 +1,11 @@
 #include "monty.h"
 
 /**
- *  * sub - substracts the second top element from the stack
- *   * by the top element of the stack.
- *    * @stack: head stack
- *     * @line_number: line number
- *      */
+ ** sub - substracts the second top element from the stack
+ ** by the top element of the stack.
+ ** @stack: head stack
+ ** @line_number: line number
+ **/
 void	sub(stack_t **stack, unsigned int line_number)
 {
 	stack_t	*frst = NULL;
@@ -21,10 +21,10 @@ void	sub(stack_t **stack, unsigned int line_number)
 	free(frst);
 }
 /**
- *  * mul - multiplies the top two elements of the stack.
- *   * @stack: head stack
- *    * @line_number: line number
- *     */
+ ** mul - multiplies the top two elements of the stack.
+ ** @stack: head stack
+ ** @line_number: line number
+ **/
 void	mul(stack_t **stack, unsigned int line_number)
 {
 	stack_t	*frst = NULL;
@@ -43,12 +43,12 @@ void	mul(stack_t **stack, unsigned int line_number)
 }
 
 /**
- *  * divide - divides the second top element of the stack
- *   * by the top element of the stack.
- *    * @stack: head stack
- *     * @line_number: line number
- *      */
-void	divide(stack_t **stack, unsigned int line_number)
+ ** div - function that divide the second top element of the stack
+ ** by the top element of the stack.
+ ** @stack: head stack
+ ** @line_number: line number
+ **/
+void	div(stack_t **stack, unsigned int line_number)
 {
 	stack_t	*frst = NULL;
 
@@ -71,11 +71,11 @@ void	divide(stack_t **stack, unsigned int line_number)
 }
 
 /**
- *  * modul - computes the rest of the divideision of the second top element
- *   * of the stack by the top element of the stack
- *    * @stack: head stack
- *     * @line_number: line number
- *      */
+ ** modul - computes the rest of the divideision of the second top element
+ ** of the stack by the top element of the stack
+ ** @stack: head stack
+ ** @line_number: line number
+ **/
 void	modul(stack_t **stack, unsigned int line_number)
 {
 	stack_t	*frst = NULL;
