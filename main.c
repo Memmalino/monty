@@ -1,7 +1,5 @@
 #include "monty.h"
-void print_stack(stack_t *stack);
 void monty_arg(char **tmp, stack_t **stack, int line, FILE *file);
-void free_func(char **arg);
 /**
  * main - the entry point
  * @argc: the number of arguments to main
@@ -50,6 +48,14 @@ int main(int argc, char **argv)
 
 	return (EXIT_SUCCESS);
 }
+/**
+ * monty_arg - function that calls each function with their argument
+ * @tmp: temprary store each line of the code
+ * @stack: pointer to the head of the stack
+ * @line: the index of the current line
+ * @file: the file opened
+ * Return: void
+ */
 void monty_arg(char **tmp, stack_t **stack, int line, FILE *file)
 {
 	int j = 0;
@@ -86,16 +92,3 @@ void monty_arg(char **tmp, stack_t **stack, int line, FILE *file)
 	}
 
 }
-
-void free_func(char **arg)
-{
-	int i = 0;
-
-	while (arg[i] != NULL)
-	{
-		free(arg[i]);
-		i++;
-	}
-	free(arg);
-}
-

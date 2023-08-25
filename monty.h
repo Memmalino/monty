@@ -10,21 +10,11 @@
 #define INSTRUCTIONS {		\
 		{"pint", pint},	\
 		{"pall", pall},	\
-		{"nop", nop},	\
-		{"swap", swap},	\
 		{"pop", pop},	\
 		{"push", push},	\
-		{"add", add},	\
 		{"mul", mul},	\
 		{"sub", sub},	\
-		{"div", divide},	\
-		{"mod", modul},	\
-		{"pchar", pchar},	\
-		{"pstr", pstr},	\
-		{"rotl", rotl},	\
-		{"rotr", rotr},	\
-		{"stack", stack_switch},	\
-		{"queue", queue_switch},	\
+		{"div", division},	\
 		{NULL, NULL}	\
 }
 
@@ -71,7 +61,7 @@ void swap(stack_t **stack, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
 void mul(stack_t **stack, unsigned int line_number);
 void sub(stack_t **stack, unsigned int line_number);
-void div(stack_t **stack, unsigned int line_number);
+void division(stack_t **stack, unsigned int line_number);
 void modul(stack_t **stack, unsigned int line_number);
 void pchar(stack_t **stack, unsigned int line_number);
 void pstr(stack_t **stack, unsigned int line_number);

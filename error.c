@@ -14,7 +14,8 @@ void print_error(int code, char *argv_0, char *opcode, int line_n)
 			fprintf(stderr, "L%d: unknown instruction %s\n", line_n, opcode);
 			free(opcode);
 			break;
-		case 3: fprintf(stderr, "L%d: usage: %s integer\n", line_n, opcode);
+		case 3:
+			fprintf(stderr, "L%d: usage: %s integer\n", line_n, opcode);
 			break;
 	}
 

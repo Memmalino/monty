@@ -43,12 +43,12 @@ void	mul(stack_t **stack, unsigned int line_number)
 }
 
 /**
- ** div - function that divide the second top element of the stack
+ ** division - function that divide the second top element of the stack
  ** by the top element of the stack.
  ** @stack: head stack
  ** @line_number: line number
  **/
-void	div(stack_t **stack, unsigned int line_number)
+void	division(stack_t **stack, unsigned int line_number)
 {
 	stack_t	*frst = NULL;
 
