@@ -8,7 +8,7 @@ char *args[2];
  */
 void push(stack_t **stack, unsigned int line_number)
 {
-	int value;
+	int value, valid, i, len;
 	stack_t *new_node = malloc(sizeof(stack_t));
 
 	if (new_node == NULL)
@@ -16,24 +16,55 @@ void push(stack_t **stack, unsigned int line_number)
 		fprintf(stderr, "Memory allocation failed\n");
 		exit(EXIT_FAILURE);
 	}
+
 	if (!args[0])
 		print_error(3, NULL, "push", line_number);
 	else
 	{
-		value = atoi(args[0]);
-		if  (value == 0 && strcmp(args[0], "0") != 0)
+		valid = 1;
+		len = strlen(args[0]);
+
+		if (len > 0 && (args[0][0] == '-' || args[0][0] == '+')) 
+		{
+			for (i = 1; i < len; i++)
+			{
+				if (!isdigit(args[0][i]))
+				{
+					valid = 0;
+					break;
+				}
+			}
+		} 
+		else
+		{
+
+			for (i = 0; i < len; i++)
+			{
+				if (!isdigit(args[0][i]))
+				{
+					valid = 0;
+					break;
+				}
+			}
+		}
+
+		if (!valid)
 		{
 			free(args[0]);
 			print_error(3, NULL, "push", line_number);
 		}
-		free(args[0]);
+
+		value = atoi(args[0]);
+		free(args[0]);	
 	}
+
 	new_node->n = value;
 	new_node->prev = NULL;
 	new_node->next = *stack;
 
-	if (*stack != NULL)
+	if (*stack != NULL) {
 		(*stack)->prev = new_node;
+	}
 
 	*stack = new_node;
 }
