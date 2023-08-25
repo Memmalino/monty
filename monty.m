@@ -5,5 +5,6 @@ pall
 pop
 push 0
 push 3     
+sub
 push 7
 pall
