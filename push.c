@@ -55,7 +55,6 @@ void push(stack_t **stack, unsigned int line_number)
 		}
 
 		value = atoi(args[0]);
-		free(args[0]);	
 	}
 
 	new_node->n = value;

@@ -1,5 +1,5 @@
 #include "monty.h"
-void monty_arg(char **tmp, stack_t **stack, int line, FILE *file);
+void monty_arg(char **tmp, stack_t **arg_stack, int line, FILE *file);
 /**
  * main - the entry point
  * @argc: the number of arguments to main
@@ -23,6 +23,9 @@ int main(int argc, char **argv)
 		token = strtok(line, " \n");
 		if (!token || token[0] == '#')
 			continue;
+		for (i  = 0; i < 3; i++)
+			tmp[i] = NULL;
+		i = 0;
 		while (token != NULL)
 		{
 			if (i < 2)
@@ -30,7 +33,6 @@ int main(int argc, char **argv)
 			token = strtok(NULL, " \n");
 			i++;
 		}
-		tmp[2] = NULL;
 		monty_arg(tmp, &stack, k, file);
 	}
 
@@ -54,7 +56,7 @@ int main(int argc, char **argv)
  * @file: the file opened
  * Return: void
  */
-void monty_arg(char **tmp, stack_t **stack, int line, FILE *file)
+void monty_arg(char **tmp, stack_t **arg_stack, int line, FILE *file)
 {
 	int j = 0;
 	char *opcodee = NULL;
@@ -80,7 +82,11 @@ void monty_arg(char **tmp, stack_t **stack, int line, FILE *file)
 
 	}
 	if (func)
-		func(stack, line + 1);
+	{
+		func(arg_stack, line + 1);
+		if (args[0])
+			free(args[0]);
+	}
 	else
 	{
 

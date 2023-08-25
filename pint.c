@@ -14,6 +14,4 @@ void	pint(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	printf("%d\n", (*stack)->n);
-	if (args[0] != NULL)
-		free(args[0]);
 }
