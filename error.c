@@ -1,5 +1,11 @@
 #include "monty.h"
-
+/**
+ * print_error - function that prints the necessary errors
+ * @code: the nuber to specify the error to print
+ * @argv_0: the name of the file to read
+ * @opcode: the function which send a failure message
+ * @line_n: the index of the current line
+ */
 void print_error(int code, char *argv_0, char *opcode, int line_n)
 {
 	switch (code)

@@ -6,4 +6,4 @@ pall
 push 3
 pall
 push 4
-pall
+pall hello! :) we don't really care about what's after pall

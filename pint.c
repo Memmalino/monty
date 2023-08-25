@@ -1,10 +1,10 @@
 #include "monty.h"
 
 /**
- *  * pint - prints the value at the top of the stack, followed by a new line.
- *   * @stack: stack head
- *    * @line_number: line number
- *     */
+ ** pint - prints the value at the top of the stack, followed by a new line.
+ ** @stack: stack head
+ ** @line_number: line number
+ **/
 
 void	pint(stack_t **stack, unsigned int line_number)
 {
