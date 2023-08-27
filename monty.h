@@ -23,8 +23,6 @@
 		{"pstr", pstr}, \
 		{"div", division},\
 		{"swap", swap},\
-		{"queue", queue}, \
-		{"stack", stacks}, \
 		{NULL, NULL}	\
 }
 

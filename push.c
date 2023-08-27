@@ -29,8 +29,6 @@ void push(stack_t **stack, unsigned int line_number)
 	if (*stack != NULL)
 		(*stack)->prev = new_node;
 	*stack = new_node;
-	if (strcmp(args[1], "queue") == 0)
-		rotl(stack, line_number);
 }
 /**
  * validity - function that checks if the argument is number
