@@ -23,6 +23,8 @@
 		{"pstr", pstr}, \
 		{"div", division},\
 		{"swap", swap},\
+		{"queue", queue}, \
+		{"stack", stacks}, \
 		{NULL, NULL}	\
 }
 
@@ -75,7 +77,7 @@ void pchar(stack_t **stack, unsigned int line_number);
 void pstr(stack_t **stack, unsigned int line_number);
 void rotl(stack_t **stack, unsigned int line_number);
 void rotr(stack_t **stack, unsigned int line_number);
-void stack_switch(stack_t **stack, unsigned int line_number);
-void queue_switch(stack_t **stack, unsigned int line_number);
+void stacks(stack_t **stack, unsigned int line_number);
+void queue(stack_t **stack, unsigned int line_number);
 
 #endif	
