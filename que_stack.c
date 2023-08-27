@@ -7,7 +7,7 @@ char *args[2];
  * @line_number: the index of the current line we ar working on
  * Return: void
  */
-void stacks(stack_t **stack _attribute_((unused)), unsigned int line_number)
+void stacks(stack_t **stack __attribute__((unused)), unsigned int line_number)
 {
 	(void) line_number;
 
@@ -20,7 +20,7 @@ void stacks(stack_t **stack _attribute_((unused)), unsigned int line_number)
  * @line_number: the index of the current line we ar working on
  * Return: void
  */
-void queue(stack_t **stack _attribute_((unused)), unsigned int line_number)
+void queue(stack_t **stack __attribute__((unused)), unsigned int line_number)
 {
 	(void) line_number;
 
