@@ -32,10 +32,10 @@ void    pchar(stack_t **stack, unsigned int line_number)
 	printf("%c\n", top->n);
 }
 /**
- * pstr - function that prints the string starting at the top of the stack
- * @stack: double pointer to the top of the stack
- * @line_number: the index of the current line
- * Return: void
+ *  pstr - function that prints the string starting at the top of the stack
+ *  @stack: double pointer to the top of the stack
+ *  @line_number: the index of the current line
+ *  Return: void
  */
 void    pstr(stack_t **stack, unsigned int line_number __attribute__((unused)))
 {
