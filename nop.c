@@ -7,7 +7,7 @@
  * Return: void
  */
 
-void    nop(stack_t **stack _attribute_((unused)), unsigned int line_number)
+void    nop(stack_t **stack __attribute__((unused)), unsigned int line_number)
 {
 	(void) line_number;
 }

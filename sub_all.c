@@ -73,14 +73,13 @@ void	division(stack_t **stack, unsigned int line_number)
 	(*stack)->n /= frst->n;
 	free(frst);
 }
-
 /**
  ** modul - computes the rest of the divideision of the second top element
  ** of the stack by the top element of the stack
  ** @stack: head stack
  ** @line_number: line number
  **/
-void	modul(stack_t **stack, unsigned int line_number)
+void mod(stack_t **stack, unsigned int line_number)
 {
 	stack_t	*frst = NULL;
 

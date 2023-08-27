@@ -13,8 +13,14 @@
 		{"pop", pop},	\
 		{"push", push},	\
 		{"mul", mul},	\
+		{"mod", mod}, \
 		{"sub", sub},	\
-		{"div", division},	\
+		{"nop", nop}, \
+		{"add", add}, \
+		{"pchar", pchar}, \
+		{"pstr", pstr}, \
+		{"div", division},\
+		{"swap", swap},\
 		{NULL, NULL}	\
 }
 
@@ -62,7 +68,7 @@ void add(stack_t **stack, unsigned int line_number);
 void mul(stack_t **stack, unsigned int line_number);
 void sub(stack_t **stack, unsigned int line_number);
 void division(stack_t **stack, unsigned int line_number);
-void modul(stack_t **stack, unsigned int line_number);
+void mod(stack_t **stack, unsigned int line_number);
 void pchar(stack_t **stack, unsigned int line_number);
 void pstr(stack_t **stack, unsigned int line_number);
 void rotl(stack_t **stack, unsigned int line_number);

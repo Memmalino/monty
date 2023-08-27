@@ -37,7 +37,7 @@ void    pchar(stack_t **stack, unsigned int line_number)
  * @line_number: the index of the current line
  * Return: void
  */
-void    pstr(stack_t **stack, unsigned int line_number _attribute_((unused)))
+void    pstr(stack_t **stack, unsigned int line_number __attribute__((unused)))
 {
 	stack_t *top;
 
