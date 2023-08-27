@@ -18,6 +18,8 @@
 		{"nop", nop}, \
 		{"add", add}, \
 		{"pchar", pchar}, \
+		{"rotl", rotl},\
+		{"rotr", rotr},\
 		{"pstr", pstr}, \
 		{"div", division},\
 		{"swap", swap},\
